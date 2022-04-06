@@ -1,4 +1,7 @@
 locals {
+  # aws region
+  region = "us-east-1"
+
   # image owner alias
   ami_owner_alias = "amazon"
 
