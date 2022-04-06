@@ -19,3 +19,14 @@ variable "tags" {
   description = "Tags for the instance"
   default     = {}
 }
+
+variable "shutdown_behavior" {
+  type        = string
+  description = "Shutdown behaviour"
+  default     = "stop"
+
+  validation {
+    condition     = var.shutdown_behavior == "stop" || var.shutdown_behavior == "terminate"
+    error_message = "Shutdown behavior can only be stop or terminate."
+  }
+}
