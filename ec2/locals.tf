@@ -14,6 +14,12 @@ locals {
     ManagedBy = local.managed_by
   }
 
+  # key pair
+  key_pair = {
+    # key pair name
+    name = "${local.creator}-Key-Pair"
+  }
+
   #instance
   instance = {
     # image owner alias

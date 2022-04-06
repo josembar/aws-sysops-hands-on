@@ -1,7 +1,11 @@
 # key pair to connect to instance
-#resource "aws_key_pair" "key_pair_demo" {
-#  
-#}
+resource "aws_key_pair" "key_pair_demo" {
+  key_name   = local.key_pair.name
+  public_key = file("./key_demo.pub")
+  tags = {
+    Name = local.key_pair.name
+  }
+}
 
 # instance creation
 
