@@ -1,3 +1,8 @@
+# key pair to connect to instance
+#resource "aws_key_pair" "key_pair_demo" {
+#  
+#}
+
 # instance creation
 
 module "ec2_instance" {
@@ -6,6 +11,8 @@ module "ec2_instance" {
   instance_type           = local.instance.instance_type
   shutdown_behavior       = local.instance.shutdown_behaviors[1]
   disable_api_termination = false
-  tags                    = merge(local.instance.instance_name, local.general_tags)
+  tags = {
+    Name = local.instance.instance_name
+  }
 
 }

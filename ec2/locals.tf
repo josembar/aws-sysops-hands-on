@@ -26,9 +26,7 @@ locals {
     shutdown_behaviors = ["stop", "terminate"]
 
     # instance name
-    instance_name = {
-      Name = "Jose-EC2-Demo"
-    }
-    
+    instance_name = "Jose-EC2-Demo"
+
   }
 }
