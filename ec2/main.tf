@@ -6,6 +6,6 @@ module "ec2_instance" {
   instance_type           = local.instance.instance_type
   shutdown_behavior       = local.instance.shutdown_behaviors[1]
   disable_api_termination = false
-  tags                    = local.instance.instance_tags
+  tags                    = merge(local.instance.instance_name, local.general_tags)
 
 }

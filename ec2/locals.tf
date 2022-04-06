@@ -2,6 +2,18 @@ locals {
   # aws region
   region = "us-east-1"
 
+  # creator
+  creator = "JoseB"
+
+  # managed by Terraform
+  managed_by = "Terraform"
+
+  # general tags 
+  general_tags = {
+    Creator   = local.creator
+    ManagedBy = local.managed_by
+  }
+
   #instance
   instance = {
     # image owner alias
@@ -13,11 +25,10 @@ locals {
     # shutdown behaviors
     shutdown_behaviors = ["stop", "terminate"]
 
-    # instance tags
-    instance_tags = {
-      Name      = "Jose-EC2-Demo"
-      Creator   = "JoseB"
-      ManagedBy = "Terraform"
+    # instance name
+    instance_name = {
+      Name = "Jose-EC2-Demo"
     }
+    
   }
 }
