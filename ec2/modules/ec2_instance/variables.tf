@@ -30,3 +30,14 @@ variable "shutdown_behavior" {
     error_message = "Shutdown behavior can only be stop or terminate."
   }
 }
+
+variable "disable_api_termination" {
+  type        = bool
+  default     = false
+  description = "value"
+
+  validation {
+    condition     = var.disable_api_termination == false || var.disable_api_termination == true
+    error_message = "Disable termination can only be true or false."
+  }
+}
