@@ -12,7 +12,7 @@ module "ec2_instance" {
   shutdown_behavior       = local.instance.shutdown_behaviors[1]
   disable_api_termination = false
   tags = {
-    Name = local.instance.instance_name
+    Name = local.instance.name
   }
 
 }
