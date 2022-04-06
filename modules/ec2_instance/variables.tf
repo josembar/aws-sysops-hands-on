@@ -41,3 +41,8 @@ variable "disable_api_termination" {
     error_message = "Disable termination can only be true or false."
   }
 }
+
+variable "key_name" {
+  type    = string
+  default = ""
+}
