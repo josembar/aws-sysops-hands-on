@@ -1,13 +1,21 @@
 # input variables
 variable "ami" {
-  type = string
+  type        = string
+  description = "AMI instance"
+
+  validation {
+    condition     = length(var.ami) > 4 && substr(var.ami, 0, 4) == "ami-"
+    error_message = "The image_id value must be a valid AMI id, starting with \"ami-\"."
+  }
 }
 
 variable "instance_type" {
-  type = string
+  type        = string
+  description = "Instance type"
 }
 
 variable "tags" {
-  type    = map(string)
-  default = {}
+  type        = map(string)
+  description = "Tags for the instance"
+  default     = {}
 }
