@@ -20,6 +20,11 @@ locals {
     name = "${local.creator}-Key-Pair"
   }
 
+  # security group
+  security_group = {
+    name = "${local.creator}-SG"
+  }
+
   #instance
   instance = {
     # image owner alias
