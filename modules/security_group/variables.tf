@@ -23,7 +23,7 @@ variable "tags" {
   description = "Tags for security group"
   default     = {}
 }
-/*
+
 variable "ingress_rules" {
   type = list(object({
     port        = number
@@ -31,8 +31,9 @@ variable "ingress_rules" {
     cidr_blocks = list(string)
   }))
   description = "List of ingress rules"
+  default     = [null]
 }
-*/
+
 variable "egress_rules" {
   type = list(object({
     port        = number
