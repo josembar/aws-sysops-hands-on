@@ -46,3 +46,8 @@ variable "key_name" {
   type    = string
   default = ""
 }
+
+variable "vpc_security_group_ids" {
+  type    = list(string)
+  default = []
+}
