@@ -9,9 +9,10 @@ resource "aws_key_pair" "key_pair_demo" {
 
 # security group for the instance
 module "security_group" {
-  source = "../modules/security_group"
-  name   = local.security_group.name
-  vpc_id = data.aws_vpc.default_vpc.id
+  source      = "../modules/security_group"
+  name        = local.security_group.name
+  description = local.security_group.name
+  vpc_id      = data.aws_vpc.default_vpc.id
   tags = {
     Name = local.security_group.name
   }
