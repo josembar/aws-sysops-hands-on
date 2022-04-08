@@ -6,9 +6,11 @@ resource "aws_security_group" "sg" {
   tags        = var.tags
 
   # ingress rules 
-  /*
   dynamic "ingress" {
-    for_each = var.ingress_rules
+    for_each = [
+      for rule in var.ingress_rules : rule
+      if rule != null
+    ]
 
     content {
       from_port   = ingress.value.port
@@ -17,7 +19,6 @@ resource "aws_security_group" "sg" {
       cidr_blocks = ingress.value.cidr_blocks
     }
   }
-  */
 
   # egress rules
   dynamic "egress" {
