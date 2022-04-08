@@ -25,8 +25,8 @@ locals {
 
   # ports
   ports = {
-      ssh = 22
-    }
+    ssh = 22
+  }
 
   # protocols
   protocols = {
