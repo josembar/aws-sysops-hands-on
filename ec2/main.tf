@@ -26,6 +26,7 @@ module "ec2_instance" {
   shutdown_behavior       = local.instance.shutdown_behaviors[0]
   disable_api_termination = false
   key_name                = aws_key_pair.key_pair_demo.id
+  vpc_security_group_ids  = [module.security_group.security_group_id]
   tags = {
     Name = local.instance.name
   }
